@@ -132,12 +132,30 @@
                 </ul>
             `,
             ch5: `
-                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
-                <ul class="list-disc list-inside space-y-2">
-                    <li><b>彈性伸長量 (Elastic Elongation, $\\delta$)</b>: $$ \\delta = \\int_0^L \\frac{N(x)}{A(x)E(x)} dx $$</li>
+                <h3 class="text-xl font-semibold mb-4">重點定義與公式</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>線彈性二力桿伸長量 ($\delta$)</b>: $$ \\delta = \\sum \\frac{N_i L_i}{A_i E_i} = \\int_0^L \\frac{N(x)}{A(x)E(x)} dx $$</li>
+                    <li><b>線彈性二力桿軸向勁度 (Stiffness, k)</b>: $$ k = \\frac{AE}{L} $$</li>
+                    <li><b>並聯桿件</b>: 若桿件並聯，且外力作用在並聯節點上，則外力依各桿勁度比例分配給各桿。</li>
+                    <li><b>重疊原理 (Superposition)</b>: 當材料為均質線彈性，且變形微小時，結構受諸力聯合作用所造成的變形(或應力) = $\\sum$ {結構受單一力作用所造成的變形(或應力)}。</li>
+                    <li><b>線彈性軸力桿件應變能 (Strain Energy, U)</b>: $$ U = \\int_0^L \\frac{\\sigma_x^2}{2E} dV = \\int_0^L \\frac{N^2}{2AE} dx = \\sum \\frac{N_i^2 L_i}{2A_i E_i} $$</li>
+                    <li><b>總伸長量 ($\delta_{total}$)</b>: $$ \\delta_{total} = \\delta_{stress} + \\delta_{thermal} $$</li>
+                    <li><b>衝擊載重動態位移 ($\delta_{im}$)</b>: $$ \\delta_{im} = \\delta_{st} + \\sqrt{\\delta_{st}^2 + 2h\\delta_{st}} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">其中 $\\delta_{st}$ 為靜態位移，h 為衝擊高度。</p></li>
+                    <li><b>卸載 (Unloading)</b>: 可視為加上一個反向力。</li>
                 </ul>
             `,
             ch6: `
+                <h3 class="text-xl font-semibold mb-4">重點定義與公式</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>扭率 (Rate of Twist, $\\theta$)</b>: 單位長度的扭轉角。 $$ \\theta = \\frac{d\\phi}{dx} $$</li>
+                    <li><b>實心圓桿扭轉剪應力</b>: $$ \\tau = \\frac{T\\rho}{J} \\quad \\text{, 其中 } J = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2} $$</li>
+                    <li><b>線彈性材料扭轉角 (Angle of Twist, $\\phi$)</b>: $$ \\phi = \\sum \\frac{T_i L_i}{G_i J_i} = \\int_0^L \\frac{T(x)}{G(x)J(x)} dx $$</li>
+                    <li><b>實心圓桿抗扭勁度 (Torsional Stiffness, k)</b>: $$ k = \\frac{GJ}{L} $$</li>
+                    <li><b>線彈性扭力桿件應變能 (Strain Energy, U)</b>: $$ U = \\sum \\frac{T_i^2 L_i}{2G_i J_i} = \\int_0^L \\frac{T^2 dx}{2GJ} $$</li>
+                    <li><b>薄壁封閉斷面剪力流 (Shear Flow, f)</b>: $$ f = \\tau t = \\text{constant} $$</li>
+                    <li><b>薄壁封閉斷面剪應力</b>: $$ \\tau = \\frac{T}{2A_m t} \\quad \\text{, } \\tau_{max} \\text{ 發生在 } t_{min} \\text{ 處} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">$A_m$ 為薄壁中心線所包圍面積。</p></li>
+                </ul>
+                <h3 class="text-xl font-semibold my-4">不同斷面扭轉性質比較</h3>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse">
                         <thead class="bg-gray-200 dark:bg-gray-700">
@@ -178,24 +196,31 @@
                 </ul>
             `,
             ch8: `
-                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <h3 class="text-xl font-semibold mb-4">重點定義與公式</h3>
                 <ul class="list-disc list-inside space-y-4">
-                    <li><b>撓曲公式 (Flexure Formula)</b>: $$ \\sigma = -\\frac{My}{I} $$</li>
-                    <li><b>斷面模數 (Section Modulus, S)</b>: $$ S = \\frac{I}{y_{max}} \\quad \\Rightarrow \\quad \\sigma_{max} = \\frac{M}{S} $$</li>
+                    <li><b>撓曲正向應力公式 (Flexure Formula)</b>: $$ \\sigma = -\\frac{My}{I} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">(假設y軸向上為正)</p></li>
+                    <li><b>斷面曲率 (Curvature, $\\kappa$)</b>: $$ \\kappa = \\frac{M}{EI} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">正向應變與曲率關係: $\\epsilon = -\\kappa y$</p></li>
+                    <li><b>斷面模數 (Section Modulus, S)</b>: $$ S = \\frac{I}{c} = \\frac{I}{y_{max}} \\quad \\Rightarrow \\quad \\sigma_{max} = \\frac{M}{S} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">矩形斷面 $S = \\frac{bh^2}{6}$</p></li>
+                    <li><b>轉換斷面法 (Transformed Section)</b>: 用於複合材料梁。模數比 $n = E_2/E_1$。應力計算: $$ \\sigma_1 = \\frac{My}{I_{tr}} \\quad ; \\quad \\sigma_2 = n \\frac{My}{I_{tr}} $$</li>
+                    <li><b>偏心軸力 (Eccentric Axial Load)</b>: $$ \\sigma = -\\frac{P}{A} - \\frac{M_z y}{I_z} + \\frac{M_y z}{I_y} $$</li>
+                    <li><b>非對稱彎曲 (Unsymmetric Bending)</b>: $$ \\sigma_x = \\frac{(M_z I_y - M_y I_{yz})y - (M_y I_z - M_z I_{yz})z}{I_y I_z - I_{yz}^2} $$</li>
+                    <li><b>降伏彎矩 (Yield Moment, $M_y$)</b>: 斷面邊緣開始降伏時的彎矩。$$ M_y = S \\sigma_y $$</li>
+                    <li><b>塑性彎矩 (Plastic Moment, $M_p$)</b>: 整個斷面皆降伏時的彎矩。$$ M_p = Z_p \\sigma_y $$</li>
                     <li><b>形狀因子 (Shape Factor, f)</b>: $$ f = \\frac{M_p}{M_y} = \\frac{Z_p}{S} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">矩形斷面 f = 1.5</p></li>
                 </ul>
             `,
             ch9: `
-                <h3 class="text-xl font-semibold mb-4">重要公式與定義</h3>
+                <h3 class="text-xl font-semibold mb-4">重點定義與公式</h3>
                 <ul class="list-disc list-inside space-y-4">
-                    <li><b>剪應力公式 (Shear Formula)</b>: $$ \\tau = \\frac{VQ}{Ib} $$</li>
-                    <li><b>剪力中心 (Shear Center)</b>: 當橫向載重通過此點，梁只會彎曲而不會產生扭轉。</li>
-                    <li><b>最大剪應力</b>:
-                        <ul class="list-circle list-inside ml-6 mt-2">
-                            <li>矩形斷面: $$\\tau_{max} = \\frac{3V}{2A}$$</li>
-                            <li>圓形斷面: $$\\tau_{max} = \\frac{4V}{3A}$$</li>
+                    <li><b>撓曲剪應力公式 (Shear Formula)</b>: $$ \\tau = \\frac{VQ}{Ib} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">Q: 計算點外側面積對中性軸的一次矩; b: 計算點處之梁寬。</p></li>
+                    <li><b>剪力流 (Shear Flow, q)</b>: $$ q = \\frac{VQ}{I} = \\tau b $$</li>
+                    <li><b>最大撓曲剪應力 ($\tau_{max}$)</b>:
+                        <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
+                            <li>矩形斷面 (於中性軸): $$\\tau_{max} = \\frac{3}{2}\\frac{V}{A}$$</li>
+                            <li>圓形斷面 (於中性軸): $$\\tau_{max} = \\frac{4}{3}\\frac{V}{A}$$</li>
                         </ul>
                     </li>
+                    <li><b>剪力中心 (Shear Center)</b>: 當橫向載重通過此點，梁只會彎曲而不會產生扭轉。</li>
                 </ul>
             `,
             ch10: `
@@ -244,17 +269,23 @@
                 </ul>
             `,
             ch13: `
-                 <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                 <h3 class="text-xl font-semibold mb-4">重點定義與公式</h3>
                 <ul class="list-disc list-inside space-y-4">
                     <li><b>撓度曲線的微分方程式</b>:
-                        $$ EI \\frac{d^2v}{dx^2} = M(x) $$
-                        $$ EI \\frac{d^3v}{dx^3} = V(x) $$
-                        $$ EI \\frac{d^4v}{dx^4} = -q(x) $$
+                        <p class="ml-6">曲率精確式: $$\\kappa = \\frac{v''}{[1+(v')^2]^{3/2}}$$.</p>
+                        <p class="ml-6">曲率近似式 (小變形假設): $$\\kappa \\approx v'' = \\frac{d^2v}{dx^2}$$</p>
+                        $$ EI\\frac{d^2v}{dx^2} = M(x) $$
+                        $$ EI\\frac{d^3v}{dx^3} = V(x) $$
+                        $$ EI\\frac{d^4v}{dx^4} = -q(x) $$
+                    </li>
+                    <li><b>Macaulay 函數 (奇異函數)</b>: 用於表示不連續載重。
+                        $$ \\langle x-a \\rangle^n = \\begin{cases} (x-a)^n & \\text{for } x \\ge a \\\\ 0 & \\text{for } x < a \\end{cases} $$
+                        $$ \\int \\langle x-a \\rangle^n dx = \\frac{\\langle x-a \\rangle^{n+1}}{n+1} + C $$
                     </li>
                     <li><b>力矩面積法 (Moment-Area Theorems)</b>:
                          <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
-                            <li>第一定理: $$\\theta_B - \\theta_A = \\int_A^B \\frac{M}{EI} dx$$</li>
-                            <li>第二定理: $$t_{B/A} = \\int_A^B \\frac{M}{EI} x_B dx$$</li>
+                            <li><b>第一定理 (轉角差)</b>: A, B 兩點間之轉角差等於 M/EI 圖在 A, B 間的面積。 $$\\theta_{B/A} = \\theta_B - \\theta_A = \\int_A^B \\frac{M}{EI} dx$$</li>
+                            <li><b>第二定理 (切線偏移)</b>: B點相對於A點切線的垂直偏移，等於 M/EI 圖在 A, B 間的面積對 B 點的一次矩。 $$t_{B/A} = \\int_A^B x_B \\frac{M}{EI} dx$$</li>
                         </ul>
                     </li>
                     <li><b>基本梁變位公式</b>:
