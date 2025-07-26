@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料力學公式彙整</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Style for KaTeX display math */
+        .katex-display {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.5rem 0;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Header and Navigation -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <h1 class="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">材料力學公式彙整</h1>
+                <div class="relative">
+                    <select id="chapter-select" class="block appearance-none w-full bg-gray-200 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 py-2 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-600 focus:border-blue-500">
+                        <option value="">選擇章節...</option>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div id="content-container">
+            <!-- Content sections will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <script>
+        // Data for the chapters and formulas
+        const chapters = [
+            { id: 'ch1', title: '第一章、應力與應變' },
+            { id: 'ch2', title: '第二章、材料機械性質' },
+            { id: 'ch3', title: '第三章、構件斷面性質' },
+            { id: 'ch4_14', title: '第四/十四章、能量法' },
+            { id: 'ch5', title: '第五章、軸力桿件' },
+            { id: 'ch6', title: '第六章、扭力桿件' },
+            { id: 'ch7', title: '第七章、剪力圖與彎矩圖' },
+            { id: 'ch8', title: '第八章、梁內正向應力' },
+            { id: 'ch9', title: '第九章、梁內剪應力' },
+            { id: 'ch10', title: '第十章、應力轉換' },
+            { id: 'ch11', title: '第十一章、應變轉換' },
+            { id: 'ch12', title: '第十二章、合成應力與破壞準則' },
+            { id: 'ch13', title: '第十三章、梁變形分析' },
+            { id: 'ch15', title: '第十五章、穩定性分析' }
+        ];
+
+        const content = {
+            ch1: `
+                <h3 class="text-xl font-semibold mb-4">重點定義</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><b>剪應變 (Shear Strain, $\\gamma$)</b>: 機件受剪應力後，其兩垂直邊的角度改變量。</li>
+                    <li><b>容許應力 (Allowable Stress, $\\sigma_{allow}$)</b>: 工程設計中，考量安全係數後，所規定材料能承受的最大應力。</li>
+                </ul>
+            `,
+            ch2: `
+                <h3 class="text-xl font-semibold mb-4">重點定義</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><b>彈性 (Elasticity)</b>: 材料卸載後能完全回復原狀的性質。</li>
+                    <li><b>偏距法 (Offset Method)</b>: 用於決定沒有明確降伏點材料的降伏強度 (通常取 0.2% 應變偏距)。</li>
+                    <li><b>延性/脆性材料 (Ductile/Brittle Material)</b>: 依破壞時的應變大小區分。</li>
+                    <li><b>波松比 (Poisson's Ratio, $\\nu$)</b>: 單軸應力下，側向應變與軸向應變比值的負值。 $$ \\nu = - \\frac{\\epsilon_{lat}}{\\epsilon_{axi}} $$</li>
+                    <li><b>均質 (Homogeneous)</b>: 物體內任兩點，在同一方向上，有相同的物理性質。</li>
+                    <li><b>均向 (Isotropic)</b>: 物體內任一點，在各個方向上，有相同的物理性質。</li>
+                </ul>
+            `,
+            ch3: `
+                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>形心 (Centroid, C)</b>: $$ \\bar{x} = \\frac{\\int xdA}{A} \\quad ; \\quad \\bar{y} = \\frac{\\int ydA}{A} $$</li>
+                    <li><b>面積二次矩 (Moment of Inertia, I)</b>: $$ I_x = \\int y^2 dA \\quad ; \\quad I_y = \\int x^2 dA $$</li>
+                    <li><b>極慣性矩 (Polar Moment of Inertia, J)</b>: $$ J = \\int r^2 dA = I_x + I_y $$</li>
+                    <li><b>平行軸定理 (Parallel Axis Theorem)</b>: $$ I = I_c + Ad^2 $$</li>
+                </ul>
+            `,
+            ch4_14: `
+                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>應變能 (Strain Energy, U) - 一般結構</b>: $$ U = \\int \\frac{M^2dx}{2EI} + \\int \\frac{T^2dx}{2GJ} + \\int \\frac{N^2dx}{2AE} + \\int \\frac{f_s V^2 dx}{2AG} + \\dots $$
+                    <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">其中，剪力形狀因子 (Form Factor for Shear, $f_s$) 對於矩形斷面為 $f_s = 6/5$。</p></li>
+                    <li><b>廣義虎克定律 (Generalized Hooke's Law)</b> (含熱應變): $$ \\epsilon_x = \\frac{1}{E}[\\sigma_x - \\nu(\\sigma_y + \\sigma_z)] + \\alpha \\Delta t $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">(y, z方向的公式可類推)</p></li>
+                    <li><b>剪力模數 (Shear Modulus, G)</b>: $$ G = \\frac{E}{2(1+\\nu)} $$</li>
+                    <li><b>卡氏第二定理 (Castigliano's Second Theorem)</b> (適用於線性彈性材料):<p class="ml-6">結構上一點沿 $P_i$ 力方向的位移 $\\Delta_i$。</p> $$ \\Delta_i = \\frac{\\partial U}{\\partial P_i} $$</li>
+                    <li><b>Crotti-Engesser 定理</b>: 卡氏第二定理的推廣，可用於非線性結構，但結構必須彈性。</li>
+                </ul>
+            `,
+            ch5: `
+                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><b>彈性伸長量 (Elastic Elongation, $\\delta$)</b>: $$ \\delta = \\int_0^L \\frac{N(x)}{A(x)E(x)} dx $$</li>
+                </ul>
+            `,
+            ch6: `
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-gray-200 dark:bg-gray-700">
+                            <tr>
+                                <th class="p-3 font-semibold">斷面類型</th>
+                                <th class="p-3 font-semibold">實心/空心圓形斷面</th>
+                                <th class="p-3 font-semibold">薄壁封閉斷面</th>
+                                <th class="p-3 font-semibold">薄壁開口斷面</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-300 dark:border-gray-600">
+                                <td class="p-3 font-medium">扭轉常數 (J)</td>
+                                <td class="p-3">$$ J=\\frac{\\pi}{2}r^4 \\text{ (實心)} $$</td>
+                                <td class="p-3">$$ J = \\frac{4A_m^2}{\\oint ds/t} $$</td>
+                                <td class="p-3">$$ J = \\frac{1}{3}\\sum bt^3 $$</td>
+                            </tr>
+                            <tr class="border-b border-gray-300 dark:border-gray-600">
+                                <td class="p-3 font-medium">剪應力 ($\\tau$)</td>
+                                <td class="p-3">$$ \\tau = \\frac{T\\rho}{J} $$</td>
+                                <td class="p-3">$$ \\tau = \\frac{T}{2A_m t} $$</td>
+                                <td class="p-3">$$ \\tau = \\frac{Tt}{J} $$</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium">扭轉角 ($\\phi$)</td>
+                                <td class="p-3">$$ \\phi = \\frac{TL}{GJ} $$</td>
+                                <td class="p-3">$$ \\phi = \\frac{TL}{GJ} $$</td>
+                                <td class="p-3">$$ \\phi = \\frac{TL}{GJ} $$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            `,
+            ch7: `
+                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><b>微分關係</b>: $$ \\frac{dV}{dx} = -q(x) \\quad ; \\quad \\frac{dM}{dx} = V(x) $$</li>
+                </ul>
+            `,
+            ch8: `
+                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>撓曲公式 (Flexure Formula)</b>: $$ \\sigma = -\\frac{My}{I} $$</li>
+                    <li><b>斷面模數 (Section Modulus, S)</b>: $$ S = \\frac{I}{y_{max}} \\quad \\Rightarrow \\quad \\sigma_{max} = \\frac{M}{S} $$</li>
+                    <li><b>形狀因子 (Shape Factor, f)</b>: $$ f = \\frac{M_p}{M_y} = \\frac{Z_p}{S} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">矩形斷面 f = 1.5</p></li>
+                </ul>
+            `,
+            ch9: `
+                <h3 class="text-xl font-semibold mb-4">重要公式與定義</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>剪應力公式 (Shear Formula)</b>: $$ \\tau = \\frac{VQ}{Ib} $$</li>
+                    <li><b>剪力中心 (Shear Center)</b>: 當橫向載重通過此點，梁只會彎曲而不會產生扭轉。</li>
+                    <li><b>最大剪應力</b>:
+                        <ul class="list-circle list-inside ml-6 mt-2">
+                            <li>矩形斷面: $$\\tau_{max} = \\frac{3V}{2A}$$</li>
+                            <li>圓形斷面: $$\\tau_{max} = \\frac{4V}{3A}$$</li>
+                        </ul>
+                    </li>
+                </ul>
+            `,
+            ch10: `
+                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>應力轉換公式</b>:
+                        $$ \\sigma_{\\theta} = \\frac{\\sigma_x + \\sigma_y}{2} + \\frac{\\sigma_x - \\sigma_y}{2}\\cos(2\\theta) + \\tau_{xy}\\sin(2\\theta) $$
+                        $$ \\tau_{\\theta} = -\\frac{\\sigma_x - \\sigma_y}{2}\\sin(2\\theta) + \\tau_{xy}\\cos(2\\theta) $$
+                    </li>
+                    <li><b>主應力 (Principal Stresses, $\\sigma_1, \\sigma_2$)</b>:
+                        $$ \\sigma_{1,2} = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2} $$
+                    </li>
+                    <li><b>最大平面剪應力 (Max In-plane Shear Stress, $\\tau_{max}$)</b>:
+                        $$ \\tau_{max} = \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2} = \\frac{\\sigma_1 - \\sigma_2}{2} $$
+                    </li>
+                    <li><b>絕對最大剪應力 (Absolute Maximum Shear Stress, $(\\tau_{max})_{abs}$)</b>:
+                        $$ (\\tau_{max})_{abs} = \\frac{\\sigma_{max} - \\sigma_{min}}{2} $$
+                        <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">需考慮三個主應力 $\\sigma_1, \\sigma_2, \\sigma_3$</p>
+                    </li>
+                </ul>
+            `,
+            ch11: `
+                 <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>應變轉換公式</b>:
+                        $$ \\epsilon_{\\theta} = \\frac{\\epsilon_x + \\epsilon_y}{2} + \\frac{\\epsilon_x - \\epsilon_y}{2}\\cos(2\\theta) + \\frac{\\gamma_{xy}}{2}\\sin(2\\theta) $$
+                        $$ \\frac{\\gamma_{\\theta}}{2} = -\\frac{\\epsilon_x - \\epsilon_y}{2}\\sin(2\\theta) + \\frac{\\gamma_{xy}}{2}\\cos(2\\theta) $$
+                    </li>
+                </ul>
+            `,
+            ch12: `
+                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>薄壁壓力容器 (Thin-Walled Pressure Vessels)</b>:
+                        <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
+                            <li>圓柱形: 環向應力 $\\sigma_h = \\frac{pr}{t}$ ; 軸向應力 $\\sigma_a = \\frac{pr}{2t}$</li>
+                            <li>圓球形: $$\\sigma = \\frac{pr}{2t}$$</li>
+                        </ul>
+                    </li>
+                    <li><b>破壞準則 (Failure Criteria) - 適用於延性材料</b>:
+                        <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
+                            <li>最大剪應力準則 (Tresca): $$(\\tau_{max})_{abs} \\ge \\frac{\\sigma_y}{2}$$</li>
+                            <li>最大形變能準則 (von Mises) (平面應力): $$\\sigma_1^2 - \\sigma_1\\sigma_2 + \\sigma_2^2 \\ge \\sigma_y^2$$</li>
+                        </ul>
+                    </li>
+                </ul>
+            `,
+            ch13: `
+                 <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>撓度曲線的微分方程式</b>:
+                        $$ EI \\frac{d^2v}{dx^2} = M(x) $$
+                        $$ EI \\frac{d^3v}{dx^3} = V(x) $$
+                        $$ EI \\frac{d^4v}{dx^4} = -q(x) $$
+                    </li>
+                    <li><b>力矩面積法 (Moment-Area Theorems)</b>:
+                         <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
+                            <li>第一定理: $$\\theta_B - \\theta_A = \\int_A^B \\frac{M}{EI} dx$$</li>
+                            <li>第二定理: $$t_{B/A} = \\int_A^B \\frac{M}{EI} x_B dx$$</li>
+                        </ul>
+                    </li>
+                    <li><b>基本梁變位公式</b>:
+                        <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
+                            <li>簡支梁 (中點集中載重 P): $$\\delta_{max} = \\frac{PL^3}{48EI}$$</li>
+                            <li>簡支梁 (均布載重 w): $$\\delta_{max} = \\frac{5wL^4}{384EI}$$</li>
+                            <li>懸臂梁 (端點集中載重 P): $$\\delta_{max} = \\frac{PL^3}{3EI}$$</li>
+                            <li>懸臂梁 (均布載重 w): $$\\delta_{max} = \\frac{wL^4}{8EI}$$</li>
+                        </ul>
+                    </li>
+                </ul>
+            `,
+            ch15: `
+                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
+                <ul class="list-disc list-inside space-y-4">
+                    <li><b>歐拉挫屈載重 (Euler Buckling Load, $P_{cr}$)</b>:
+                        $$ P_{cr} = \\frac{\\pi^2 EI}{(KL)^2} $$
+                        <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">K 為有效長度因子，視兩端支承條件而定。</p>
+                    </li>
+                    <li><b>正割公式 (Secant Formula)</b> (用於偏心軸向載重):
+                        $$ \\sigma_{max} = \\frac{P}{A} \\left[ 1 + \\frac{ec}{r^2} \\sec\\left( \\frac{L_e}{2r} \\sqrt{\\frac{P}{AE}} \\right) \\right] $$
+                        <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">e: 偏心距, c: 形心至外緣距離, r: 迴轉半徑, $L_e$: 有效長度</p>
+                    </li>
+                </ul>
+            `
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const select = document.getElementById('chapter-select');
+            const container = document.getElementById('content-container');
+
+            // Populate select and content
+            chapters.forEach(chapter => {
+                // Add option to dropdown
+                const option = document.createElement('option');
+                option.value = chapter.id;
+                option.textContent = chapter.title;
+                select.appendChild(option);
+
+                // Create content section
+                const section = document.createElement('section');
+                section.id = chapter.id;
+                section.className = 'mb-12';
+                
+                const card = document.createElement('div');
+                card.className = 'bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 transition-colors duration-300';
+                
+                const title = document.createElement('h2');
+                title.className = 'text-2xl md:text-3xl font-bold mb-6 border-l-4 border-blue-500 pl-4';
+                title.textContent = chapter.title;
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.innerHTML = content[chapter.id];
+
+                card.appendChild(title);
+                card.appendChild(contentDiv);
+                section.appendChild(card);
+                container.appendChild(section);
+            });
+
+            // Add event listener for navigation
+            select.addEventListener('change', function() {
+                const targetId = this.value;
+                if (targetId) {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        // Calculate offset for the sticky header
+                        const headerOffset = document.querySelector('header').offsetHeight + 20;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                }
+            });
+
+            // Render LaTeX formulas
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError : false
+            });
+        });
+
+    </script>
+</body>
+</html>
