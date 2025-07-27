@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>材料力學公式彙整</title>
+    <title>水豚君的材料力學悠哉筆記</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,12 +16,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         /* Custom styles */
         body {
-            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            font-family: 'M PLUS Rounded 1c', 'Noto Sans TC', sans-serif;
             scroll-behavior: smooth;
         }
         /* Style for KaTeX display math */
@@ -35,30 +35,43 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #f5f5f4; /* stone-100 */
         }
         ::-webkit-scrollbar-thumb {
-            background: #888;
+            background: #a8a29e; /* stone-400 */
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #555;
+            background: #78716c; /* stone-500 */
         }
     </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+<body class="bg-amber-100 text-stone-800 transition-colors duration-300">
 
     <!-- Header and Navigation -->
-    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300">
+    <header class="bg-stone-300 shadow-lg sticky top-0 z-50 transition-colors duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <h1 class="text-xl sm:text-2xl font-bold text-blue-600 dark:text-blue-400">材料力學公式彙整</h1>
+            <div class="flex items-center justify-between h-24">
+                <div class="flex items-center">
+                    <!-- Capybara Icon -->
+                    <div class="relative mr-3 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-stone-700" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.98,12.5c0,4.41-3.57,8-7.98,8s-7.98-3.59-7.98-8c0-4.04,3-7.38,6.88-7.91C11.23,4.21,11.61,4,12,4 c0.39,0,0.77,0.21,1.1,0.59C16.98,5.12,19.98,8.46,19.98,12.5z M9.5,9.5h-2a0.5,0.5 0 0,0 -0.5,0.5v2a0.5,0.5 0 0,0 0.5,0.5h2a0.5,0.5 0 0,0 0.5,-0.5v-2A0.5,0.5 0 0,0 9.5,9.5z M16.5,9.5h-2a0.5,0.5 0 0,0 -0.5,0.5v2a0.5,0.5 0 0,0 0.5,0.5h2a0.5,0.5 0 0,0 0.5,-0.5v-2A0.5,0.5 0 0,0 16.5,9.5z"/>
+                        </svg>
+                        <!-- Yuzu on top -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="absolute -top-1 left-1/2 -translate-x-1/2 h-7 w-7 text-orange-400" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="12" r="8"/>
+                            <path d="M12,4 A1.5,1.5 0 0,1 13.5,5 L14,2 A1,1 0 0,0 12,2 z" class="text-green-600"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl sm:text-2xl font-bold text-stone-800">水豚君的悠哉筆記</h1>
+                </div>
                 <div class="relative">
-                    <select id="chapter-select" class="block appearance-none w-full bg-gray-200 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 py-2 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-600 focus:border-blue-500">
-                        <option value="">選擇章節...</option>
+                    <select id="chapter-select" class="block appearance-none w-full bg-stone-200 border border-stone-400 text-stone-800 py-2.5 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-orange-500">
+                        <option value="">要去哪個溫泉...</option>
                         <!-- Options will be populated by JavaScript -->
                     </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-200">
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-stone-700">
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                     </div>
                 </div>
@@ -72,6 +85,11 @@
             <!-- Content sections will be populated by JavaScript -->
         </div>
     </main>
+    
+    <!-- Footer -->
+    <footer class="text-center py-6">
+        <p class="text-stone-500">慢慢來，比較快。 —— 水豚君</p>
+    </footer>
 
     <script>
         // Data for the chapters and formulas
@@ -79,7 +97,7 @@
             { id: 'ch1', title: '第一章、應力與應變' },
             { id: 'ch2', title: '第二章、材料機械性質' },
             { id: 'ch3', title: '第三章、構件斷面性質' },
-            { id: 'ch4_14', title: '第四/十四章、能量法' },
+            { id: 'ch4', title: '第四章、能量簡介' },
             { id: 'ch5', title: '第五章、軸力桿件' },
             { id: 'ch6', title: '第六章、扭力桿件' },
             { id: 'ch7', title: '第七章、剪力圖與彎矩圖' },
@@ -89,228 +107,26 @@
             { id: 'ch11', title: '第十一章、應變轉換' },
             { id: 'ch12', title: '第十二章、合成應力與破壞準則' },
             { id: 'ch13', title: '第十三章、梁變形分析' },
+            { id: 'ch14', title: '第十四章、能量法' },
             { id: 'ch15', title: '第十五章、穩定性分析' }
         ];
 
         const content = {
-            ch1: `
-                <h3 class="text-xl font-semibold mb-4">重點定義</h3>
-                <ul class="list-disc list-inside space-y-2">
-                    <li><b>剪應變 (Shear Strain, $\\gamma$)</b>: 機件受剪應力後，其兩垂直邊的角度改變量。</li>
-                    <li><b>容許應力 (Allowable Stress, $\\sigma_{allow}$)</b>: 工程設計中，考量安全係數後，所規定材料能承受的最大應力。</li>
-                </ul>
-            `,
-            ch2: `
-                <h3 class="text-xl font-semibold mb-4">重點定義</h3>
-                <ul class="list-disc list-inside space-y-2">
-                    <li><b>彈性 (Elasticity)</b>: 材料卸載後能完全回復原狀的性質。</li>
-                    <li><b>偏距法 (Offset Method)</b>: 用於決定沒有明確降伏點材料的降伏強度 (通常取 0.2% 應變偏距)。</li>
-                    <li><b>延性/脆性材料 (Ductile/Brittle Material)</b>: 依破壞時的應變大小區分。</li>
-                    <li><b>波松比 (Poisson's Ratio, $\\nu$)</b>: 單軸應力下，側向應變與軸向應變比值的負值。 $$ \\nu = - \\frac{\\epsilon_{lat}}{\\epsilon_{axi}} $$</li>
-                    <li><b>均質 (Homogeneous)</b>: 物體內任兩點，在同一方向上，有相同的物理性質。</li>
-                    <li><b>均向 (Isotropic)</b>: 物體內任一點，在各個方向上，有相同的物理性質。</li>
-                </ul>
-            `,
-            ch3: `
-                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>形心 (Centroid, C)</b>: $$ \\bar{x} = \\frac{\\int xdA}{A} \\quad ; \\quad \\bar{y} = \\frac{\\int ydA}{A} $$</li>
-                    <li><b>面積二次矩 (Moment of Inertia, I)</b>: $$ I_x = \\int y^2 dA \\quad ; \\quad I_y = \\int x^2 dA $$</li>
-                    <li><b>極慣性矩 (Polar Moment of Inertia, J)</b>: $$ J = \\int r^2 dA = I_x + I_y $$</li>
-                    <li><b>平行軸定理 (Parallel Axis Theorem)</b>: $$ I = I_c + Ad^2 $$</li>
-                </ul>
-            `,
-            ch4_14: `
-                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>應變能 (Strain Energy, U) - 一般結構</b>: $$ U = \\int \\frac{M^2dx}{2EI} + \\int \\frac{T^2dx}{2GJ} + \\int \\frac{N^2dx}{2AE} + \\int \\frac{f_s V^2 dx}{2AG} + \\dots $$
-                    <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">其中，剪力形狀因子 (Form Factor for Shear, $f_s$) 對於矩形斷面為 $f_s = 6/5$。</p></li>
-                    <li><b>廣義虎克定律 (Generalized Hooke's Law)</b> (含熱應變): $$ \\epsilon_x = \\frac{1}{E}[\\sigma_x - \\nu(\\sigma_y + \\sigma_z)] + \\alpha \\Delta t $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">(y, z方向的公式可類推)</p></li>
-                    <li><b>剪力模數 (Shear Modulus, G)</b>: $$ G = \\frac{E}{2(1+\\nu)} $$</li>
-                    <li><b>卡氏第二定理 (Castigliano's Second Theorem)</b> (適用於線性彈性材料):<p class="ml-6">結構上一點沿 $P_i$ 力方向的位移 $\\Delta_i$。</p> $$ \\Delta_i = \\frac{\\partial U}{\\partial P_i} $$</li>
-                    <li><b>Crotti-Engesser 定理</b>: 卡氏第二定理的推廣，可用於非線性結構，但結構必須彈性。</li>
-                </ul>
-            `,
-            ch5: `
-                <h3 class="text-xl font-semibold mb-4">重點定義與公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>線彈性二力桿伸長量 ($\delta$)</b>: $$ \\delta = \\sum \\frac{N_i L_i}{A_i E_i} = \\int_0^L \\frac{N(x)}{A(x)E(x)} dx $$</li>
-                    <li><b>線彈性二力桿軸向勁度 (Stiffness, k)</b>: $$ k = \\frac{AE}{L} $$</li>
-                    <li><b>並聯桿件</b>: 若桿件並聯，且外力作用在並聯節點上，則外力依各桿勁度比例分配給各桿。</li>
-                    <li><b>重疊原理 (Superposition)</b>: 當材料為均質線彈性，且變形微小時，結構受諸力聯合作用所造成的變形(或應力) = $\\sum$ {結構受單一力作用所造成的變形(或應力)}。</li>
-                    <li><b>線彈性軸力桿件應變能 (Strain Energy, U)</b>: $$ U = \\int_0^L \\frac{\\sigma_x^2}{2E} dV = \\int_0^L \\frac{N^2}{2AE} dx = \\sum \\frac{N_i^2 L_i}{2A_i E_i} $$</li>
-                    <li><b>總伸長量 ($\delta_{total}$)</b>: $$ \\delta_{total} = \\delta_{stress} + \\delta_{thermal} $$</li>
-                    <li><b>衝擊載重動態位移 ($\delta_{im}$)</b>: $$ \\delta_{im} = \\delta_{st} + \\sqrt{\\delta_{st}^2 + 2h\\delta_{st}} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">其中 $\\delta_{st}$ 為靜態位移，h 為衝擊高度。</p></li>
-                    <li><b>卸載 (Unloading)</b>: 可視為加上一個反向力。</li>
-                </ul>
-            `,
-            ch6: `
-                <h3 class="text-xl font-semibold mb-4">重點定義與公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>扭率 (Rate of Twist, $\\theta$)</b>: 單位長度的扭轉角。 $$ \\theta = \\frac{d\\phi}{dx} $$</li>
-                    <li><b>實心圓桿扭轉剪應力</b>: $$ \\tau = \\frac{T\\rho}{J} \\quad \\text{, 其中 } J = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2} $$</li>
-                    <li><b>線彈性材料扭轉角 (Angle of Twist, $\\phi$)</b>: $$ \\phi = \\sum \\frac{T_i L_i}{G_i J_i} = \\int_0^L \\frac{T(x)}{G(x)J(x)} dx $$</li>
-                    <li><b>實心圓桿抗扭勁度 (Torsional Stiffness, k)</b>: $$ k = \\frac{GJ}{L} $$</li>
-                    <li><b>線彈性扭力桿件應變能 (Strain Energy, U)</b>: $$ U = \\sum \\frac{T_i^2 L_i}{2G_i J_i} = \\int_0^L \\frac{T^2 dx}{2GJ} $$</li>
-                    <li><b>薄壁封閉斷面剪力流 (Shear Flow, f)</b>: $$ f = \\tau t = \\text{constant} $$</li>
-                    <li><b>薄壁封閉斷面剪應力</b>: $$ \\tau = \\frac{T}{2A_m t} \\quad \\text{, } \\tau_{max} \\text{ 發生在 } t_{min} \\text{ 處} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">$A_m$ 為薄壁中心線所包圍面積。</p></li>
-                </ul>
-                <h3 class="text-xl font-semibold my-4">不同斷面扭轉性質比較</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead class="bg-gray-200 dark:bg-gray-700">
-                            <tr>
-                                <th class="p-3 font-semibold">斷面類型</th>
-                                <th class="p-3 font-semibold">實心/空心圓形斷面</th>
-                                <th class="p-3 font-semibold">薄壁封閉斷面</th>
-                                <th class="p-3 font-semibold">薄壁開口斷面</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b border-gray-300 dark:border-gray-600">
-                                <td class="p-3 font-medium">扭轉常數 (J)</td>
-                                <td class="p-3">$$ J=\\frac{\\pi}{2}r^4 \\text{ (實心)} $$</td>
-                                <td class="p-3">$$ J = \\frac{4A_m^2}{\\oint ds/t} $$</td>
-                                <td class="p-3">$$ J = \\frac{1}{3}\\sum bt^3 $$</td>
-                            </tr>
-                            <tr class="border-b border-gray-300 dark:border-gray-600">
-                                <td class="p-3 font-medium">剪應力 ($\\tau$)</td>
-                                <td class="p-3">$$ \\tau = \\frac{T\\rho}{J} $$</td>
-                                <td class="p-3">$$ \\tau = \\frac{T}{2A_m t} $$</td>
-                                <td class="p-3">$$ \\tau = \\frac{Tt}{J} $$</td>
-                            </tr>
-                            <tr>
-                                <td class="p-3 font-medium">扭轉角 ($\\phi$)</td>
-                                <td class="p-3">$$ \\phi = \\frac{TL}{GJ} $$</td>
-                                <td class="p-3">$$ \\phi = \\frac{TL}{GJ} $$</td>
-                                <td class="p-3">$$ \\phi = \\frac{TL}{GJ} $$</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            `,
-            ch7: `
-                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
-                <ul class="list-disc list-inside space-y-2">
-                    <li><b>微分關係</b>: $$ \\frac{dV}{dx} = -q(x) \\quad ; \\quad \\frac{dM}{dx} = V(x) $$</li>
-                </ul>
-            `,
-            ch8: `
-                <h3 class="text-xl font-semibold mb-4">重點定義與公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>撓曲正向應力公式 (Flexure Formula)</b>: $$ \\sigma = -\\frac{My}{I} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">(假設y軸向上為正)</p></li>
-                    <li><b>斷面曲率 (Curvature, $\\kappa$)</b>: $$ \\kappa = \\frac{M}{EI} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">正向應變與曲率關係: $\\epsilon = -\\kappa y$</p></li>
-                    <li><b>斷面模數 (Section Modulus, S)</b>: $$ S = \\frac{I}{c} = \\frac{I}{y_{max}} \\quad \\Rightarrow \\quad \\sigma_{max} = \\frac{M}{S} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">矩形斷面 $S = \\frac{bh^2}{6}$</p></li>
-                    <li><b>轉換斷面法 (Transformed Section)</b>: 用於複合材料梁。模數比 $n = E_2/E_1$。應力計算: $$ \\sigma_1 = \\frac{My}{I_{tr}} \\quad ; \\quad \\sigma_2 = n \\frac{My}{I_{tr}} $$</li>
-                    <li><b>偏心軸力 (Eccentric Axial Load)</b>: $$ \\sigma = -\\frac{P}{A} - \\frac{M_z y}{I_z} + \\frac{M_y z}{I_y} $$</li>
-                    <li><b>非對稱彎曲 (Unsymmetric Bending)</b>: $$ \\sigma_x = \\frac{(M_z I_y - M_y I_{yz})y - (M_y I_z - M_z I_{yz})z}{I_y I_z - I_{yz}^2} $$</li>
-                    <li><b>降伏彎矩 (Yield Moment, $M_y$)</b>: 斷面邊緣開始降伏時的彎矩。$$ M_y = S \\sigma_y $$</li>
-                    <li><b>塑性彎矩 (Plastic Moment, $M_p$)</b>: 整個斷面皆降伏時的彎矩。$$ M_p = Z_p \\sigma_y $$</li>
-                    <li><b>形狀因子 (Shape Factor, f)</b>: $$ f = \\frac{M_p}{M_y} = \\frac{Z_p}{S} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">矩形斷面 f = 1.5</p></li>
-                </ul>
-            `,
-            ch9: `
-                <h3 class="text-xl font-semibold mb-4">重點定義與公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>撓曲剪應力公式 (Shear Formula)</b>: $$ \\tau = \\frac{VQ}{Ib} $$ <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">Q: 計算點外側面積對中性軸的一次矩; b: 計算點處之梁寬。</p></li>
-                    <li><b>剪力流 (Shear Flow, q)</b>: $$ q = \\frac{VQ}{I} = \\tau b $$</li>
-                    <li><b>最大撓曲剪應力 ($\tau_{max}$)</b>:
-                        <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
-                            <li>矩形斷面 (於中性軸): $$\\tau_{max} = \\frac{3}{2}\\frac{V}{A}$$</li>
-                            <li>圓形斷面 (於中性軸): $$\\tau_{max} = \\frac{4}{3}\\frac{V}{A}$$</li>
-                        </ul>
-                    </li>
-                    <li><b>剪力中心 (Shear Center)</b>: 當橫向載重通過此點，梁只會彎曲而不會產生扭轉。</li>
-                </ul>
-            `,
-            ch10: `
-                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>應力轉換公式</b>:
-                        $$ \\sigma_{\\theta} = \\frac{\\sigma_x + \\sigma_y}{2} + \\frac{\\sigma_x - \\sigma_y}{2}\\cos(2\\theta) + \\tau_{xy}\\sin(2\\theta) $$
-                        $$ \\tau_{\\theta} = -\\frac{\\sigma_x - \\sigma_y}{2}\\sin(2\\theta) + \\tau_{xy}\\cos(2\\theta) $$
-                    </li>
-                    <li><b>主應力 (Principal Stresses, $\\sigma_1, \\sigma_2$)</b>:
-                        $$ \\sigma_{1,2} = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2} $$
-                    </li>
-                    <li><b>最大平面剪應力 (Max In-plane Shear Stress, $\\tau_{max}$)</b>:
-                        $$ \\tau_{max} = \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2} = \\frac{\\sigma_1 - \\sigma_2}{2} $$
-                    </li>
-                    <li><b>絕對最大剪應力 (Absolute Maximum Shear Stress, $(\\tau_{max})_{abs}$)</b>:
-                        $$ (\\tau_{max})_{abs} = \\frac{\\sigma_{max} - \\sigma_{min}}{2} $$
-                        <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">需考慮三個主應力 $\\sigma_1, \\sigma_2, \\sigma_3$</p>
-                    </li>
-                </ul>
-            `,
-            ch11: `
-                 <h3 class="text-xl font-semibold mb-4">重要公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>應變轉換公式</b>:
-                        $$ \\epsilon_{\\theta} = \\frac{\\epsilon_x + \\epsilon_y}{2} + \\frac{\\epsilon_x - \\epsilon_y}{2}\\cos(2\\theta) + \\frac{\\gamma_{xy}}{2}\\sin(2\\theta) $$
-                        $$ \\frac{\\gamma_{\\theta}}{2} = -\\frac{\\epsilon_x - \\epsilon_y}{2}\\sin(2\\theta) + \\frac{\\gamma_{xy}}{2}\\cos(2\\theta) $$
-                    </li>
-                </ul>
-            `,
-            ch12: `
-                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>薄壁壓力容器 (Thin-Walled Pressure Vessels)</b>:
-                        <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
-                            <li>圓柱形: 環向應力 $\\sigma_h = \\frac{pr}{t}$ ; 軸向應力 $\\sigma_a = \\frac{pr}{2t}$</li>
-                            <li>圓球形: $$\\sigma = \\frac{pr}{2t}$$</li>
-                        </ul>
-                    </li>
-                    <li><b>破壞準則 (Failure Criteria) - 適用於延性材料</b>:
-                        <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
-                            <li>最大剪應力準則 (Tresca): $$(\\tau_{max})_{abs} \\ge \\frac{\\sigma_y}{2}$$</li>
-                            <li>最大形變能準則 (von Mises) (平面應力): $$\\sigma_1^2 - \\sigma_1\\sigma_2 + \\sigma_2^2 \\ge \\sigma_y^2$$</li>
-                        </ul>
-                    </li>
-                </ul>
-            `,
-            ch13: `
-                 <h3 class="text-xl font-semibold mb-4">重點定義與公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>撓度曲線的微分方程式</b>:
-                        <p class="ml-6">曲率精確式: $$\\kappa = \\frac{v''}{[1+(v')^2]^{3/2}}$$.</p>
-                        <p class="ml-6">曲率近似式 (小變形假設): $$\\kappa \\approx v'' = \\frac{d^2v}{dx^2}$$</p>
-                        $$ EI\\frac{d^2v}{dx^2} = M(x) $$
-                        $$ EI\\frac{d^3v}{dx^3} = V(x) $$
-                        $$ EI\\frac{d^4v}{dx^4} = -q(x) $$
-                    </li>
-                    <li><b>Macaulay 函數 (奇異函數)</b>: 用於表示不連續載重。
-                        $$ \\langle x-a \\rangle^n = \\begin{cases} (x-a)^n & \\text{for } x \\ge a \\\\ 0 & \\text{for } x < a \\end{cases} $$
-                        $$ \\int \\langle x-a \\rangle^n dx = \\frac{\\langle x-a \\rangle^{n+1}}{n+1} + C $$
-                    </li>
-                    <li><b>力矩面積法 (Moment-Area Theorems)</b>:
-                         <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
-                            <li><b>第一定理 (轉角差)</b>: A, B 兩點間之轉角差等於 M/EI 圖在 A, B 間的面積。 $$\\theta_{B/A} = \\theta_B - \\theta_A = \\int_A^B \\frac{M}{EI} dx$$</li>
-                            <li><b>第二定理 (切線偏移)</b>: B點相對於A點切線的垂直偏移，等於 M/EI 圖在 A, B 間的面積對 B 點的一次矩。 $$t_{B/A} = \\int_A^B x_B \\frac{M}{EI} dx$$</li>
-                        </ul>
-                    </li>
-                    <li><b>基本梁變位公式</b>:
-                        <ul class="list-circle list-inside ml-6 mt-2 space-y-2">
-                            <li>簡支梁 (中點集中載重 P): $$\\delta_{max} = \\frac{PL^3}{48EI}$$</li>
-                            <li>簡支梁 (均布載重 w): $$\\delta_{max} = \\frac{5wL^4}{384EI}$$</li>
-                            <li>懸臂梁 (端點集中載重 P): $$\\delta_{max} = \\frac{PL^3}{3EI}$$</li>
-                            <li>懸臂梁 (均布載重 w): $$\\delta_{max} = \\frac{wL^4}{8EI}$$</li>
-                        </ul>
-                    </li>
-                </ul>
-            `,
-            ch15: `
-                <h3 class="text-xl font-semibold mb-4">重要公式</h3>
-                <ul class="list-disc list-inside space-y-4">
-                    <li><b>歐拉挫屈載重 (Euler Buckling Load, $P_{cr}$)</b>:
-                        $$ P_{cr} = \\frac{\\pi^2 EI}{(KL)^2} $$
-                        <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">K 為有效長度因子，視兩端支承條件而定。</p>
-                    </li>
-                    <li><b>正割公式 (Secant Formula)</b> (用於偏心軸向載重):
-                        $$ \\sigma_{max} = \\frac{P}{A} \\left[ 1 + \\frac{ec}{r^2} \\sec\\left( \\frac{L_e}{2r} \\sqrt{\\frac{P}{AE}} \\right) \\right] $$
-                        <p class="ml-6 text-sm text-gray-500 dark:text-gray-400">e: 偏心距, c: 形心至外緣距離, r: 迴轉半徑, $L_e$: 有效長度</p>
-                    </li>
-                </ul>
-            `
+            ch1: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>剪應變 (Shear Strain)</b>: 微素受剪應力後，其兩垂直邊的角度改變量稱為剪應變，單位是弧度。在 Timoshenko 的傳統符號法則下，以角度縮小為正、變大為負。在拉小為正的符號法則下，以角度縮小為正、變大為負。※考名詞解釋時，請一併繪圖形解釋。</li><li><b>容許應力 (Allowable Stress)</b>: 工程設計，考慮到桿件尺寸製作誤差，實際外力大小的不確定性 (e.g. 超載、地震) 或氣候、腐蝕等因素，為了不讓材料所受的應力過大造成危險或變形過大失去使用性，經常限制材料日後在正常服務水準下承受應力的上限。設計者對脆性材料的極限應力 (或延性材料的降伏應力) 保留一安全餘裕，使日後應力不超過其一上限，該上限謂之「容許應力」。</li></ul>`,
+            ch2: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>工程應力 (Engineering Stress)</b>: 在單拉試驗中，將軸拉力除以試體原斷面積所得到的應力，稱為工程應力，也稱為傳統應力 (Conventional Stress)，所得曲線稱為傳統應力-應變曲線。</li><li><b>偏距法 (Offset Method)</b>: 對於沒有明顯降伏點的應力-應變曲線 (如鋁合金)，以應變 0.002 為偏距，繪斜線平行試驗之初始斜率，與試驗曲線交於一點，則交點所對應的應力為該材料的偏距降伏應力 (Offset Yield Stress) $\\sigma_y$。這類決定降伏應力的方法稱為偏距法。</li><li><b>彈性 (Elasticity)</b>: 在 $\\sigma-\\epsilon$ 曲線上，卸載時，能完全循原來加載路徑返回原點的性質，稱之。</li><li><b>線性 (Linear)</b>: 指 $\\sigma$ 與 $\\epsilon$ 之間存在一次方正比的關係。比例常數只能有一個，才是線性。</li><li><b>延性材料 (Ductile Material)</b>: 材料在破壞前一剎那，能展現出很大的永久應變 (Permanent Strain) 者，稱此材料具有延性。破壞時伸長率 (即軸向應變) 超過 5% 者，通常歸類於延性材料。如結構鋼、鋁、橡膠。</li><li><b>韌性 (Toughness)</b>: 材料在破壞時，能吸收很大應變能者，稱此材料具有韌性。如結構鋼、鋁。</li><li><b>脆性 (Brittle)</b>: 材料在破壞時，應變相當小者，稱此材料具有脆性。如鑄鐵、鋼鍵、混凝土、玻璃、陶瓷、粉筆。</li><li><b>波松比 (Poisson's Ratio, $\\nu$)</b>: 桿件在單拉試驗下，軸向應變增加，側向應變減少，其比值(如後式)稱波松比。$$ \\nu = -\\frac{\\epsilon_{lat}}{\\epsilon_{axi}} = -\\frac{\\text{側向應變}}{\\text{軸向應變}} $$ <p class="ml-6 text-sm text-stone-500">※ 在二維或三維應力作用下，波松比不得以上式計算，須以廣義虎克定律計算。</p></li><li><b>均質 (Homogeneous) 物體</b>: 物體內不同的任兩點，在同一方向上，有相同的物理性質，稱物體為均質的物體。</li><li><b>均向 (Isotropic) 物體</b>: 物體內任取一點，在各個方向上，有相同的物理性質，稱物體為均向的物體。</li><li><b>潛變 (Creep)</b>: 在荷重不變的情況下，變形隨時間持續增加的現象稱之。潛變乃是緩慢的塑性變形，重物重量不變，保麗龍變形卻與日俱增。木製書櫃內書本總重量不變，水平板撓度卻漸漸增加的現象亦屬潛變。鋼筋混凝土梁受壓的潛變會引起內應力重分配，使得混凝土承受的應變壓力減少，鋼筋承受的應變壓力增加。預力混凝土潛變會使鋼鍵預力降低。</li><li><b>疲勞 (Fatigue)</b>: 以低於降伏應力的外應力，反覆週期性地作用於物體上，終使物體斷裂的現象稱之。應力反覆作用造成應力集中處或材料瑕疵處產生細微裂縫，裂縫初期緩慢成長，然末期迅速擴散至整個斷面，在破壞前沒有明顯預警現象。例如用手指反覆扳彎細鐵絲，使其折斷的現象。</li></ul>`,
+            ch3: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>形心 C($\\bar{x}, \\bar{y}$)</b>: $$ \\bar{x} = \\frac{\\int xdA}{A} = \\frac{Q_y}{A} \\quad ; \\quad \\bar{y} = \\frac{\\int ydA}{A} = \\frac{Q_x}{A} $$ <p class="ml-6 text-sm text-stone-500">$Q_y$ 稱為面積對 y 軸的面積一次矩，$Q_x$ 稱為面積對 x 軸的面積一次矩。</p></li><li><b>面積二次矩</b>: $$ I_x = \\int y^2 dA \\quad ; \\quad I_y = \\int x^2 dA $$</li><li><b>極慣性矩</b>: $$ J = \\int r^2 dA = (x^2+y^2)dA = I_x + I_y $$</li><li><b>平行軸定理</b>: $$ I_x = I_{xc} + Ad^2 $$ <p class="ml-6 text-sm text-stone-500">※ $I_{xc}$ 是通過形心 C 的面積二次矩，不可隨意任取一軸的 I 當成 $I_{xc}$。A 是面積大小，d 是平移的距離。</p></li><li><b>面積慣性矩轉換</b>: $$ I_{x'} = \\frac{I_x+I_y}{2} + \\frac{I_x-I_y}{2}\\cos 2\\theta - I_{xy}\\sin 2\\theta $$ $$ I_{y'} = \\frac{I_x+I_y}{2} - \\frac{I_x-I_y}{2}\\cos 2\\theta + I_{xy}\\sin 2\\theta $$ $$ I_{x'y'} = \\frac{I_x-I_y}{2}\\sin 2\\theta + I_{xy}\\cos 2\\theta $$</li></ul>`,
+            ch4: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>單位體積應變能 (Strain Energy Density, u)</b>: $$ u = \\int \\sigma d\\epsilon $$</li><li><b>一維虎克定律</b>: $\\sigma = E\\epsilon$, $\\tau = G\\gamma$</li><li><b>線彈性材料應變能密度</b>: $$ u = \\frac{1}{2}(\\sigma_{xx}\\epsilon_{xx} + \\sigma_{yy}\\epsilon_{yy} + \\sigma_{zz}\\epsilon_{zz} + \\tau_{xy}\\gamma_{xy} + \\tau_{yz}\\gamma_{yz} + \\tau_{zx}\\gamma_{zx}) $$</li><li><b>構件應變能 (Strain Energy, U)</b>: $$ U = \\int udV = \\iint \\sigma d\\epsilon dV $$</li><li><b>廣義虎克定律 (Generalized Hooke's Law)</b> (含熱應變):<ul class="list-circle list-inside ml-6 mt-2 space-y-2"><li>$\\epsilon_x = \\frac{1}{E}[\\sigma_x - \\nu(\\sigma_y + \\sigma_z)] + \\alpha \\Delta t$</li><li>$\\epsilon_y = \\frac{1}{E}[\\sigma_y - \\nu(\\sigma_x + \\sigma_z)] + \\alpha \\Delta t$</li><li>$\\epsilon_z = \\frac{1}{E}[\\sigma_z - \\nu(\\sigma_x + \\sigma_y)] + \\alpha \\Delta t$</li><li>$\\gamma_{xy} = \\tau_{xy}/G$, $\\gamma_{yz} = \\tau_{yz}/G$, $\\gamma_{zx} = \\tau_{zx}/G$</li></ul></li><li><b>剪力模數 (Shear Modulus, G)</b>: $$ G = \\frac{E}{2(1+\\nu)} $$</li><li><b>體積應變 (Volumetric Strain, e)</b>: $$ e = \\frac{V_f - V_0}{V_0} = \\epsilon_x + \\epsilon_y + \\epsilon_z $$</li><li><b>體積膨脹模數 (Bulk Modulus, K)</b>: $$ K = \\frac{E}{3(1-2\\nu)} = \\frac{\\sigma_{avg}}{e} $$</li></ul>`,
+            ch5: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>線彈性二力桿伸長量 ($\delta$)</b>: $$ \\delta = \\sum \\frac{N_i L_i}{A_i E_i} = \\int_0^L \\frac{N(x)}{A(x)E(x)} dx $$</li><li><b>線彈性二力桿軸向勁度 k</b>: $$ k = \\frac{AE}{L} $$ <p class="ml-6 text-sm text-stone-500">欲伸長一單位所需施加的力。</p></li><li><b>若桿件並聯</b>，且外力作用在並聯節點上，則外力依各桿勁度比例分配給各桿。</li><li><b>重疊原理</b>: 當材料為均質線彈性，且變形微小時，結構受諸力聯合作用所造成的變形(或應力) = $\\sum$ {結構受單一力作用所造成的變形(或應力)}。<br>※ 幾何非線性、材料非線性不得使用重疊原理。</li><li><b>軸力桿件應變能 U</b>: $$ U = \\int udV $$</li><li><b>線彈性軸力桿件應變能</b>: $$ U = \\int_0^L \\frac{\\sigma_x^2}{2E} dV = \\int_0^L \\frac{N^2}{2AE} dx = \\sum \\frac{N_i^2 L_i}{2A_i E_i} $$</li><li><b>總伸長量 $\\delta_{total}$</b>: $$ \\delta_{total} = \\text{應力引起之伸長量 } \\delta_{stress} + \\text{溫差引起之伸長量 } \\delta_{ther} $$</li><li><b>Williot 圖解法</b>: 小變形下，欲求桿件伸長量，可將桿件變形後位置投影至變形前位置，藉以比較伸縮量的方法。</li><li><b>衝擊載重動態位移 $\\delta_{im}$</b>: $$ \\delta_{im} = \\delta_{st} + \\sqrt{\\delta_{st}^2 + 2h\\delta_{st}} $$</li><li><b>「卸載」(Unloading)</b> 視為「加反向力」。</li></ul>`,
+            ch6: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>扭率 (Rate of Twist, $\\theta$)</b>: 單位長度的扭轉角。 $$ \\theta = \\frac{d\\phi}{dx} $$</li><li><b>圓心圓桿扭轉剪應力公式</b>: $$ \\tau = \\frac{T\\rho}{J} \\quad \\text{, 其中 } J = \\frac{\\pi d^4}{32} = \\frac{\\pi r^4}{2} $$</li><li><b>線彈性材料扭轉角 (Angle of Twist, $\\phi$)</b>: $$ \\phi = \\sum \\frac{T_i L_i}{G_i J_i} = \\int_0^L \\frac{T(x)}{G(x)J(x)} dx $$</li><li><b>實心圓桿抗扭勁度 (Torsional Stiffness, k)</b>: $$ k = \\frac{GJ}{L} $$ <p class="ml-6 text-sm text-stone-500">欲轉動一單位扭轉角，所需施加的扭矩。</p></li><li><b>廣義剪應力</b>: $$ \\tau_z = \\sum_i \\frac{T}{J} \\rho G_i $$</li><li><b>線彈性扭力桿件應變能 (Strain Energy, U)</b>: $$ U = \\sum \\frac{T_i^2 L_i}{2G_i J_i} = \\int_0^L \\frac{T^2 dx}{2GJ} $$</li><li><b>薄壁封閉斷面剪力流 (Shear Flow, f)</b>: $$ f = \\tau t = \\text{constant} $$</li><li><b>薄壁封閉斷面剪應力</b>: $$ \\tau = \\frac{T}{2A_m t} \\quad \\text{, } \\tau_{max} \\text{ 發生在 } t_{min} \\text{ 處} $$ <p class="ml-6 text-sm text-stone-500">$A_m$ 為薄壁中心線所包圍面積。</p></li><li><b>扭轉常數 (J)</b>: $$ J = \\frac{4A_m^2}{\\oint ds/t} \\quad ; \\quad \\text{分母 } \\int \\frac{ds}{t} = \\frac{s_1}{t_1} + \\frac{s_2}{t_2} + ... $$</li><li><b>對於極薄之圓管</b>: $J = \\frac{\\pi}{32}(d_o^4 - d_i^4) = \\frac{\\pi}{4}(r_o^4 - r_i^4) \\approx 2\\pi r^3 t$</li><li><b>受到扭力 T 作用</b>: $$ T = \\frac{2}{3}\\pi R^3 \\tau_y - \\frac{1}{6}\\pi \\rho_e^3 \\tau_y $$</li></ul><h3 class="text-xl font-semibold my-4">不同斷面扭轉性質比較</h3><div class="overflow-x-auto"><table class="w-full text-left border-collapse"><thead><tr class="bg-stone-200"><th class="p-3 font-semibold">斷面類型</th><th class="p-3 font-semibold">實心/空心圓形斷面</th><th class="p-3 font-semibold">薄壁封閉斷面</th><th class="p-3 font-semibold">薄壁開口斷面</th></tr></thead><tbody><tr class="border-b border-stone-300"><td class="p-3 font-medium">扭轉常數 (J)</td><td class="p-3">$$ J=\\frac{\\pi}{2}r^4 \\text{ (實心)} $$</td><td class="p-3">$$ J = \\frac{4A_m^2}{\\oint ds/t} $$</td><td class="p-3">$$ J = \\frac{1}{3}\\sum bt^3 $$</td></tr><tr class="border-b border-stone-300"><td class="p-3 font-medium">剪應力 ($\\tau$)</td><td class="p-3">$$ \\tau = \\frac{T\\rho}{J} $$</td><td class="p-3">$$ \\tau = \\frac{T}{2A_m t} $$</td><td class="p-3">$$ \\tau = \\frac{Tt}{J} $$</td></tr><tr class="border-b border-stone-300"><td class="p-3 font-medium">扭轉角 ($\\phi$)</td><td class="p-3">$$ \\phi = \\frac{TL}{GJ} $$</td><td class="p-3">$$ \\phi = \\frac{TL}{GJ} $$</td><td class="p-3">$$ \\phi = \\frac{TL}{GJ} $$</td></tr><tr><td class="p-3 font-medium">應變能 (U)</td><td class="p-3">$$ U = \\frac{T^2L}{2GJ} $$</td><td class="p-3">$$ U = \\frac{T^2L}{2GJ} $$</td><td class="p-3">$$ U = \\frac{T^2L}{2GJ} $$</td></tr></tbody></table></div>`,
+            ch7: `<h3 class="text-xl font-semibold mb-4">重要公式</h3><ul class="list-disc list-inside space-y-2"><li><b>微分關係</b>: $$ \\frac{dV}{dx} = -q(x) \\quad ; \\quad \\frac{dM}{dx} = V(x) $$</li></ul>`,
+            ch8: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>撓曲正向應力公式 (Flexure Formula)</b>: $$ \\sigma = -\\frac{My}{I} $$ <p class="ml-6 text-sm text-stone-500">(此為 y 軸向下為正) 或 $$ \\sigma = \\frac{My}{I} $$ (此為 y 軸向上為正)</p></li><li><b>直梁的正向應變</b>: $$ \\epsilon = -\\kappa y $$</li><li><b>斷面曲率 (Curvature, $\\kappa$)</b>: $$ \\kappa = \\frac{M}{EI} $$ <p class="ml-6 text-sm text-stone-500">材料只探討小變形，所以可稱「曲率是斜率的變化率」。正向應變與曲率關係: $\\epsilon = -\\kappa y$，正向應力 $\\sigma_x = E\\epsilon_x$</p></li><li><b>斷面模數 (Section Modulus, S)</b>: $$ S = \\frac{I}{c} = \\frac{I}{y_{max}} \\quad \\Rightarrow \\quad \\sigma_{max} = \\frac{M}{S} $$ <p class="ml-6 text-sm text-stone-500">矩形斷面 $S = \\frac{bh^2}{6}$</p></li><li><b>轉換斷面法 (Transformed Section)</b>: 用於複合材料梁。模數比 $n = E_2/E_1$，將材料2轉換為材料1。$$ \\sigma_1 = \\frac{My}{I_{tr}} \\quad ; \\quad \\sigma_2 = n \\frac{My}{I_{tr}} $$ <p class="ml-6 text-sm text-stone-500">$I_{tr}$ 是轉換斷面的面積慣性矩。</p></li><li><b>偏心軸力 (Eccentric Axial Load)</b>: $$ \\sigma = -\\frac{P}{A} - \\frac{M_z y}{I_z} + \\frac{M_y z}{I_y} $$ <p class="ml-6 text-sm text-stone-500">y 向上為正，z 向左為正，M, Mz 之正負，以朝 +y 軸及 +z 軸者為正，朝 -y 軸及 -z 軸者為負。</p></li><li><b>非對稱彎曲 (Unsymmetric Bending)</b>: $$ \\sigma_x = \\frac{(M_z I_y - M_y I_{yz})y - (M_y I_z - M_z I_{yz})z}{I_y I_z - I_{yz}^2} $$</li><li><b>降伏彎矩 (Yield Moment, $M_y$)</b>: 斷面受彎矩作用而產生第一個降伏點時，此時斷面的彎矩大小稱之。$$ M_y = S \\sigma_y $$</li><li><b>塑性彎矩 (Plastic Moment, $M_p$)</b>: 斷面受彎矩作用而達全斷面降伏時，此時斷面的彎矩大小稱之。</li><li><b>塑性模數 (Plastic Modulus, $Z_p$)</b>: $$ Z_p = \\frac{M_p}{\\sigma_y} $$</li><li><b>拉、壓之降伏應力相同時，全塑性中性軸(P.N.A.)均分斷面面積為一半。</b></li><li><b>形狀因子 (Shape Factor, f)</b>: $$ f = \\frac{M_p}{M_y} = \\frac{Z_p}{S} $$ <p class="ml-6 text-sm text-stone-500">矩形斷面 f = 1.5</p></li></ul>`,
+            ch9: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>撓曲剪應力公式 (Shear Formula)</b>: $$ \\tau = \\frac{VQ}{Ib} $$ <p class="ml-6 text-sm text-stone-500">Q: 計算點外側面積對中性軸的一次矩; b: 計算點處之梁寬。</p></li><li><b>剪力流 (Shear Flow, q)</b>: $$ q = \\frac{VQ}{I} = \\tau b $$</li><li><b>最大撓曲剪應力 ($\tau_{max}$)</b>:<ul class="list-circle list-inside ml-6 mt-2 space-y-2"><li>矩形梁中性軸處，有最大撓曲剪應力: $$\\tau_{max} = \\frac{3}{2}\\tau_{avg} = \\frac{3V}{2A}$$</li><li>圓形斷面中性軸處，有最大撓曲剪應力: $$\\tau_{max} = \\frac{4}{3}\\tau_{avg} = \\frac{4V}{3A}$$</li></ul><p class="ml-6 text-sm text-stone-500">上述中之因子 3/2、4/3，分別稱為矩形斷面與圓形斷面的「剪應力形狀因子」$\\alpha_s$。</p></li><li><b>剪力中心 (Shear Center)</b>: 當構件受橫向載重作用時，為了使斷面不產生扭轉，橫向載重所須通過的點，稱之為剪力中心。或者說：斷面內撓曲剪應力的合力作用點，稱為剪力中心。</li></ul>`,
+            ch10: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>平面應力 (Plane Stress)</b>: 當三維空間間應力微素上的應力，在某一個方向(e.g. z向)的應力分量全為零時，稱該微素處於平面(x-y平面)應力狀態。</li><li><b>應力轉換公式</b>: ($\\theta$ 自鉛垂線逆時針量起為正，$\\theta$ 是表明平面的位置)<br>$$ \\sigma_{\\theta} = \\frac{\\sigma_x + \\sigma_y}{2} + \\frac{\\sigma_x - \\sigma_y}{2}\\cos(2\\theta) + \\tau_{xy}\\sin(2\\theta) $$$$ \\tau_{\\theta} = -\\frac{\\sigma_x - \\sigma_y}{2}\\sin(2\\theta) + \\tau_{xy}\\cos(2\\theta) $$</li><li><b>主應力 (Principal Stresses, $\\sigma_1, \\sigma_2$)</b>: $$ \\sigma_{1,2} = \\sigma_{avg} \\pm R = \\frac{\\sigma_x + \\sigma_y}{2} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2} $$</li><li><b>主應力的作用邊與垂直夾角 $\\theta_p$</b>: $$ \\tan(2\\theta_p) = \\frac{2\\tau_{xy}}{\\sigma_x - \\sigma_y} $$</li><li><b>最大剪應力的作用邊與垂直夾角 $\\theta_s$</b>: $$ \\theta_s = \\theta_p \\pm 45^\\circ $$</li><li><b>絕對最大剪應力 (Absolute Maximum Shear Stress, $(\\tau_{max})_{abs}$)</b>: 在空間內不同方向觀測三維微素時，所能看到的最大剪應力。 $$ (\\tau_{max})_{abs} = \\frac{1}{2}(\\sigma_1 - \\sigma_3) $$</li><li><b>貼應變計於物體表面乃是在研究平面應力問題</b>，此時: $$ \\epsilon_x = \\frac{\\sigma_x}{E} - \\frac{\\nu\\sigma_y}{E} \\quad \\text{或} \\quad \\sigma_x = \\frac{E}{1-\\nu^2}(\\epsilon_x + \\nu\\epsilon_y) $$ $$ \\epsilon_y = \\frac{\\sigma_y}{E} - \\frac{\\nu\\sigma_x}{E} \\quad \\text{或} \\quad \\sigma_y = \\frac{E}{1-\\nu^2}(\\nu\\epsilon_x + \\epsilon_y) $$</li><li><b>三維應力矩陣 [$\\sigma$]</b>: $$ [\\sigma] = \\begin{bmatrix} \\sigma_{xx} & \\tau_{xy} & \\tau_{xz} \\\\ \\tau_{yx} & \\sigma_{yy} & \\tau_{yz} \\\\ \\tau_{zx} & \\tau_{zy} & \\sigma_{zz} \\end{bmatrix} $$</li><li><b>令</b>: $$ \\begin{vmatrix} \\sigma_{xx}-\\sigma & \\tau_{xy} & \\tau_{xz} \\\\ \\tau_{yx} & \\sigma_{yy}-\\sigma & \\tau_{yz} \\\\ \\tau_{zx} & \\tau_{zy} & \\sigma_{zz}-\\sigma \\end{vmatrix} = 0 $$ <p class="ml-6 text-sm text-stone-500">可求解主應力 $\\sigma_1, \\sigma_2, \\sigma_3$。依代數大小，$\\sigma_1 \\ge \\sigma_2 \\ge \\sigma_3$。</p></li></ul>`,
+            ch11: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>平面應變 (Plane Strain)</b>: 當三維空間微素，在某一個方向(e.g. x向)的應變分量全為零時，稱該微素處於平面(y-z平面)應變狀態。</li><li><b>應變轉換公式</b>純粹由小變形的幾何關係得到，不涉及材料性質，故不管鋼、鋁、木頭、混凝土，皆要遵守應變轉換公式。<br>$$ \\epsilon_{\\theta} = \\frac{\\epsilon_x + \\epsilon_y}{2} + \\frac{\\epsilon_x - \\epsilon_y}{2}\\cos(2\\theta) + \\frac{\\gamma_{xy}}{2}\\sin(2\\theta) $$$$ \\frac{\\gamma_{\\theta}}{2} = -\\frac{\\epsilon_x - \\epsilon_y}{2}\\sin(2\\theta) + \\frac{\\gamma_{xy}}{2}\\cos(2\\theta) $$</li><li><b>對於均向材料，發生主應力時，也發生主應變。</b> $$ \\epsilon_1 = \\frac{\\sigma_1}{E} - \\frac{\\nu}{E}(\\sigma_2+\\sigma_3) \\quad ; \\quad \\epsilon_2 = \\frac{\\sigma_2}{E} - \\frac{\\nu}{E}(\\sigma_1+\\sigma_3) $$</li><li><b>應變莫爾圓半徑 R</b>: $$ R = \\sqrt{\\left(\\frac{\\epsilon_x - \\epsilon_y}{2}\\right)^2 + \\left(\\frac{\\gamma_{xy}}{2}\\right)^2} = \\frac{\\gamma_{max}}{2} = \\text{最大剪應變之半} $$</li><li><b>平均正向應變 $\\epsilon_{avg}$</b>: $$ \\epsilon_{avg} = \\frac{\\epsilon_x+\\epsilon_y}{2} $$</li><li><b>最大主應變 $\\epsilon_1$</b>: $$ \\epsilon_1 = \\epsilon_{avg} + R $$</li><li><b>最小主應變 $\\epsilon_2$</b>: $$ \\epsilon_2 = \\epsilon_{avg} - R $$</li><li><b>發生主應變的方向與水平線夾角 $\\theta_p$</b>: $$ \\tan(2\\theta_p) = \\frac{\\gamma_{xy}}{\\epsilon_x - \\epsilon_y} $$</li><li><b>發生最大剪應變的方向與水平線夾角 $\\theta_s$</b>: $$ \\theta_s = \\theta_p \\pm 45^\\circ $$</li></ul>`,
+            ch12: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>對於圓柱形壓力容器</b>: 軸向應力 $\\sigma_a = \\frac{pr}{2t}$，環向應力 $\\sigma_h = \\frac{pr}{t}$。<br>內表面微素: 面內最大剪應力 = $\\frac{pr}{4t}$，面外最大剪應力 = $\\frac{pr}{2t}$。<br>外表面微素: 面內最大剪應力 = $\\frac{pr}{4t}$，面外最大剪應力 = $\\frac{pr}{2t}$。</li><li><b>對於圓球形壓力容器</b>: $\\sigma_1 = \\sigma_2 = \\frac{pr}{2t}$。<br>內表面微素: 面內最大剪應力 = 0，面外最大剪應力 = $\\frac{pr}{4t} + \\frac{p}{2}$。<br>外表面微素: 面內最大剪應力 = 0，面外最大剪應力 = $\\frac{pr}{4t}$。</li><li><b>對於圓柱形壓力容器，$\\frac{\\epsilon_y}{\\epsilon_x} = \\frac{2-\\nu}{1-2\\nu}$</b></li><li><b>最大正向應力準則 (Maximum-Normal-Stress Theory)</b>: 材料點所受的正向應力，達到單拉試驗或單壓試驗下的降伏應力值，該材料點即宣告破壞。(適用於脆性材料)<br>其數學表示式為 $|\\sigma_1| < \\sigma_y$ 且 $|\\sigma_2| < \\sigma_y$，方為安全範圍。</li><li><b>最大剪應力準則 (Tresca Yield Criterion)</b>: 材料點受力後，其三維空間最大剪應力，若達單拉試驗或單壓試驗下剪應力極值($\\sigma_y/2$)則宣告破壞。(適用於延性材料)<br>在平面應力狀況，其數學表示式為 $|\\sigma_1| < \\sigma_y$ 且 $|\\sigma_2| < \\sigma_y$ 且 $|\\sigma_1 - \\sigma_2| < \\sigma_y$，三式皆滿足方為安全。在三維應力狀況，其數學表示式為 $|\\sigma_1 - \\sigma_3| < \\sigma_y$。</li><li><b>最大形變能準則 (von Mises Criterion)</b>: 材料點受力後的形變能，若達單拉試驗或單壓試驗下的形變能極值時，則宣告破壞。(適用於延性材料)<br>在平面應力狀況，其數學表示式為 $\\sigma_1^2 - \\sigma_1\\sigma_2 + \\sigma_2^2 < \\sigma_y^2$ 滿足左式方為安全。<br>在三維應力狀況，安全狀態下的數學表示式為 $(\\sigma_1-\\sigma_2)^2 + (\\sigma_2-\\sigma_3)^2 + (\\sigma_1-\\sigma_3)^2 < 2\\sigma_y^2$。</li><li><b>莫爾破壞準則</b>: 材料點受力後，若莫爾圓未切到或超過強度線，則該點安全，否則該點即宣告破壞。(適用於土壤)</li></ul>`,
+            ch13: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>撓度曲線的微分方程式</b>:<p class="ml-6">曲率精確式: $$\\kappa = \\frac{v''}{[1+(v')^2]^{3/2}}$$.</p><p class="ml-6">曲率近似式 (小變形假設, v'為撓曲線斜率): $$\\kappa \\approx v'' = \\frac{d^2v}{dx^2}$$</p>$$ EIV'' = M(x) \\quad ; \\quad EIV''' = V(x) \\quad ; \\quad EIV^{(4)} = -q(x) $$</li><li><b>Macaulay 函數 (奇異函數)</b>: 用於表示不連續載重。$$ \\langle x-a \\rangle^n = \\begin{cases} (x-a)^n & \\text{for } x \\ge a \\\\ 0 & \\text{for } x < a \\end{cases} $$$$ \\int \\langle x-a \\rangle^n dx = \\frac{\\langle x-a \\rangle^{n+1}}{n+1} + C $$</li><li><b>基本梁變位公式</b> (註：材料須線彈性，遵守虎克定律，微小變形):<div class="overflow-x-auto my-2"><table class="w-full text-left border-collapse"><thead><tr class="bg-stone-200"><th class="p-3 font-semibold">梁型與載重</th><th class="p-3 font-semibold">撓度</th><th class="p-3 font-semibold">轉角</th></tr></thead><tbody><tr class="border-b border-stone-300"><td class="p-3">懸臂梁 + 均布載重 w</td><td class="p-3">$\\delta_{B} = \\frac{wL^4}{8EI} (\\downarrow)$</td><td class="p-3">$\\theta_{B} = \\frac{wL^3}{6EI} (\\circlearrowleft)$</td></tr><tr class="border-b border-stone-300"><td class="p-3">懸臂梁 + 端點集中力 P</td><td class="p-3">$\\delta_{B} = \\frac{PL^3}{3EI} (\\downarrow)$</td><td class="p-3">$\\theta_{B} = \\frac{PL^2}{2EI} (\\circlearrowleft)$</td></tr><tr class="border-b border-stone-300"><td class="p-3">懸臂梁 + 端點力矩 $M_0$</td><td class="p-3">$\\delta_{B} = \\frac{M_0 L^2}{2EI} (\\downarrow)$</td><td class="p-3">$\\theta_{B} = \\frac{M_0 L}{EI} (\\circlearrowleft)$</td></tr><tr class="border-b border-stone-300"><td class="p-3">簡支梁 + 中點集中力 P</td><td class="p-3">$\\delta_{B} = \\frac{PL^3}{48EI} (\\downarrow)$</td><td class="p-3">$\\theta_{A} = \\frac{PL^2}{16EI} (\\circlearrowleft)$</td></tr><tr class="border-b border-stone-300"><td class="p-3">簡支梁 + 均布載重 w</td><td class="p-3">$\\delta_{B} = \\frac{5wL^4}{384EI} (\\downarrow)$</td><td class="p-3">$\\theta_{A} = \\frac{wL^3}{24EI} (\\circlearrowleft)$</td></tr><tr class="border-b border-stone-300"><td class="p-3">簡支梁 + 一端力矩 $M_0$</td><td class="p-3">$\\theta_{A} = \\frac{M_0 L}{3EI} (\\circlearrowleft)$</td><td class="p-3">$\\theta_{B} = \\frac{M_0 L}{6EI} (\\circlearrowright)$</td></tr><tr class="border-b border-stone-300"><td class="p-3">簡支梁 + 兩端力矩 $M_0$</td><td class="p-3">$\\delta_{B} = \\frac{M_0 L^2}{8EI} (\\downarrow)$</td><td class="p-3">$\\theta_{A} = \\theta_{C} = \\frac{M_0 L}{2EI}$</td></tr></tbody></table></div></li><li><b>力矩面積法 (Moment-Area Theorems)</b>: <ul class="list-circle list-inside ml-6 mt-2 space-y-2"><li><b>第一定理 (轉角差)</b>: A、B 兩點間彎矩圖面積除以 EI 的值，就是 A、B 兩點的轉角差。 $$\\theta_{B/A} = \\theta_B - \\theta_A = \\int_A^B \\frac{M}{EI} dx$$</li><li><b>第二定理 (切線偏移)</b>: B點相對於A點切線的垂直偏移，等於 M/EI 圖在 A, B 間的面積對 B 點的一次矩。 $$t_{B/A} = \\int_A^B x_B \\frac{M}{EI} dx$$</li></ul></li></ul>`,
+            ch14: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>補能密度 (Complementary Energy Density, $u^*$)</b>: $$ u^* = \\int \\epsilon d\\sigma $$</li><li><b>構件補能 (Complementary Energy, $U^*$)</b>: $$ U^* = \\int u^* dV $$</li><li><b>線彈性材料</b>: $u^*=u$, $U^*=U$</li><li><b>能量法分類</b>: 位法主要導入虛位移，力法主要導入虛力。</li><li><b>虛功原理</b>: 對一已經處於平衡的力系，導入一組任意微小且符合邊界條件的虛位移，則外力所作的虛功 $\\delta W$ 等於內力所貯存的虛應變能 $\\delta U$。</li><li><b>最小總勢能法</b>: 當彈性結構處於平衡時，總勢能 $\\Pi$ 對廣義座標 $\\theta$ 一次導微的結果必為零。</li><li><b>虛補功原理</b>: 對一已經處於變形諧和的力系，導入一組滿足力平衡的虛力，則在虛力增加期間，系統所增加的虛補功 $\\delta W^*$，等於系統所增加的虛補能 $\\delta U^*$。</li><li><b>單位力法</b>: 當一結構體受力而處在變形諧和，若對此結構引進一遵循力平衡的單位虛力，則作用於結構上的單位力在作用期間所作的虛補功 $\\delta W^*$，等於虛內應力所作的內虛補能 $\\delta U^*$。</li><li><b>卡氏第一定理 (Castigliano's First Theorem)</b>: 彈性結構不發生溫差、沉陷、沉陷等情形下，應變能 U 對某點位移 $\\Delta_i$ 偏微的結果，等於作用於該點上，沿位移方向的力量 $P_i$。 $$ P_i = \\frac{\\partial U}{\\partial \\Delta_i} $$</li><li><b>卡氏第二定理 (Castigliano's Second Theorem)</b>: 線彈性結構不發生溫差、沉陷等情形下，應變能 U 對某點上外力 $P_i$ 偏微的結果，等於外力作用點沿該力方向的位移 $\\Delta_i$。 $$ \\Delta_i = \\frac{\\partial U}{\\partial P_i} $$</li><li><b>Crotti-Engesser 定理</b>: 系統補能 $U^*$ 對某點上的外力 $P_i$ 進行偏微分，等於該點沿 $P_i$ 方向的位移分量 $\\Delta_i$。本定理可用在非線性結構，但結構必須彈性。 $$ \\Delta_i = \\frac{\\partial U^*}{\\partial P_i} $$</li><li><b>線彈性結構總應變能</b>: $$ U = \\int \\frac{M^2dx}{2EI} + \\int \\frac{T^2dx}{2GJ} + \\int \\frac{N^2dx}{2AE} + \\int \\frac{f_sV^2dx}{2GA} + ... $$</li><li><b>溫差曲率 ($k_{ther}$), h 為梁深, $\\Delta T$ 為梁上下面溫度差</b>: $$ k_{ther} = \\frac{\\alpha \\Delta T}{h} $$</li><li><b>梁端縱向位移 ($\Delta_H$)</b>: $$ \\Delta_H = \\frac{1}{2} \\int (v')^2 dx $$</li><li><b>重疊原理與應變能</b>: 不可以重疊原理算應變能，重疊原理只能對線性結構進行運算。</li></ul>`,
+            ch15: `<h3 class="text-xl font-semibold mb-4">重點定義與公式</h3><ul class="list-disc list-inside space-y-4"><li><b>挫屈 (Buckling)</b>: 對於細而長的桿件，受足夠大的軸向壓力作用下，可能產生側向位移(Lateral Deflection)，這種現象稱為挫屈。</li><li><b>平衡分類</b>: 分為穩定平衡、中性平衡與不穩定平衡。細長桿件受軸壓力作用，會從穩定平衡往中性平衡發展，當達到中性平衡時，此際之外力稱為臨界載重 $P_{cr}$，對應之挫屈形不唯一。</li><li><b>歐拉載重 (Euler Load)</b>: 兩端鉸接之完美直桿，其臨界載重稱為歐拉載重，即: $$ P_E = \\frac{\\pi^2 EI}{L^2} $$</li><li><b>有效長度 (Effective Length, $L_e$)</b>: $L_e=KL$，即為桿身內兩反曲點之距離。K 為有效長度因子，$0 < K < \\infty$。對於柱端有側移柱，$K \\ge 1$；對於柱端無側移柱，$0.5 \\le K \\le 1$。</li><li><b>決定有效長度因子 K 值的重要關鍵</b>: 是微擾後的挫屈曲線，而非微擾前的支承條件。</li><li><b>歐拉柱的臨界載重修正公式</b>: $$ P_{cr} = \\frac{\\pi^2 EI}{(KL)^2} $$</li><li><b>正割公式 (Secant Formula)</b>: (用於偏心軸向載重) $$ \\sigma_{max} = \\frac{P}{A} \\left[ 1 + \\frac{ec}{r^2} \\sec\\left( \\frac{KL}{2} \\sqrt{\\frac{P}{EI}} \\right) \\right] \\quad ; \\quad FS = \\frac{P_n}{P} \\neq \\frac{\\sigma_u}{\\sigma} $$</li><li>當桿件挫屈時，系統總勢能 $\\Pi$ 對廣義座標 $\\theta$ 的二次導微必需為零，即可由此式求 $P_{cr}$。 $$ \\frac{\\partial^2 \\Pi}{\\partial \\theta^2} = 0 $$</li><li><b>以下四項均不影響臨界載重大小，但會影響挫屈發展方向</b>: (1) 橫向載重 (2) 軸力偏心 (3) 初始彎曲 (4) 殘餘應力。</li></ul>`
         };
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -319,22 +135,20 @@
 
             // Populate select and content
             chapters.forEach(chapter => {
-                // Add option to dropdown
                 const option = document.createElement('option');
                 option.value = chapter.id;
                 option.textContent = chapter.title;
                 select.appendChild(option);
 
-                // Create content section
                 const section = document.createElement('section');
                 section.id = chapter.id;
                 section.className = 'mb-12';
                 
                 const card = document.createElement('div');
-                card.className = 'bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 transition-colors duration-300';
+                card.className = 'bg-stone-50 rounded-2xl shadow-lg p-6 md:p-8 transition-colors duration-300';
                 
                 const title = document.createElement('h2');
-                title.className = 'text-2xl md:text-3xl font-bold mb-6 border-l-4 border-blue-500 pl-4';
+                title.className = 'text-2xl md:text-3xl font-bold mb-6 border-l-4 border-orange-500 pl-4 text-stone-800';
                 title.textContent = chapter.title;
                 
                 const contentDiv = document.createElement('div');
@@ -346,26 +160,19 @@
                 container.appendChild(section);
             });
 
-            // Add event listener for navigation
             select.addEventListener('change', function() {
                 const targetId = this.value;
                 if (targetId) {
                     const targetElement = document.getElementById(targetId);
                     if (targetElement) {
-                        // Calculate offset for the sticky header
                         const headerOffset = document.querySelector('header').offsetHeight + 20;
                         const elementPosition = targetElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: "smooth"
-                        });
+                        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
                     }
                 }
             });
 
-            // Render LaTeX formulas
             renderMathInElement(document.body, {
                 delimiters: [
                     {left: '$$', right: '$$', display: true},
@@ -376,7 +183,6 @@
                 throwOnError : false
             });
         });
-
     </script>
 </body>
 </html>
